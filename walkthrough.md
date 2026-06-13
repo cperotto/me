@@ -9,7 +9,7 @@ foram extraídos componentes da página principal para arquivos html adjacentes 
 
 - **[menu.html](menu.html)**: contém a marcação do menu de abas em grelha.
 - **[card.html](card.html)**: modelo flexível para os cards com placeholders para injeção dinâmica de dados (`{{platform}}`, `{{date}}`, `{{title}}` e `{{content}}`).
-- **[me.html](me.html)**: consome as novas tags `<swiss-menu>` e `<nutshell-card>`, carregando o html adjacente via `fetch` assíncrono.
+- **[index.html](index.html)**: consome as novas tags `<swiss-menu>` e `<nutshell-card>`, carregando o html adjacente via `fetch` assíncrono.
 
 ---
 
@@ -30,7 +30,7 @@ para manter a estrutura limpa e modularizada, extraímos toda a lógica dinâmic
 - **[script.js](script.js)**:
   - concentra as definições de classes dos web components (`SwissMenu` e `NutshellCard`).
   - gerencia a lógica global de abas, navegação com transição animada de 8px (`nav_to`), sincronização visual do menu (`sync_menu_states`) e feedback visual em pop-up (`showtoast`).
-  - carrega de forma assíncrona no head de `me.html` utilizando o atributo `defer` para otimização de renderização.
+  - carrega de forma assíncrona no head de `index.html` utilizando o atributo `defer` para otimização de renderização.
 
 ---
 
@@ -38,7 +38,7 @@ para manter a estrutura limpa e modularizada, extraímos toda a lógica dinâmic
 com a refatoração, a árvore do diretório principal ficou organizada da seguinte forma:
 
 ```text
-├── me.html          # página principal do portfólio
+├── index.html       # página principal do portfólio
 ├── menu.html        # fragmento de html do menu de abas
 ├── card.html        # template de cartões reutilizáveis
 ├── style.css        # folha de estilo centralizada

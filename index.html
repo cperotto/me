@@ -26,36 +26,39 @@
   <!-- grelha estrutural de apoio de engenharia -->
   <div class="absolute inset-0 swiss-grid pointer-events-none opacity-50 z-0"></div>
 
-  <!-- cabeçalho técnico limpo com navegação em grelha integrada à direita -->
-  <header class="relative z-10 border-b-2 bg-surface border-ink">
-    <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-      <div>
-        <h1 class="text-3xl md:text-4xl font-black tracking-tighter leading-none text-ink">
-          camilla perotto
-        </h1>
+  <!-- header fixo com efeito de rolagem -->
+  <div id="header-fixo" class="fixed top-0 left-0 w-full z-50 transition-transform duration-300 translate-y-0">
+    <!-- cabeçalho técnico limpo com navegação em grelha integrada à direita -->
+    <header class="relative z-10 border-b-2 bg-surface border-ink">
+      <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+        <div>
+          <h1 class="text-3xl md:text-4xl font-black tracking-tighter leading-none text-ink">
+            camilla perotto
+          </h1>
+        </div>
+
+        <!-- menu de subpáginas em grelha integrado ao cabeçalho (carregado dinamicamente) -->
+        <swiss-menu></swiss-menu>
       </div>
+    </header>
 
-      <!-- menu de subpáginas em grelha integrado ao cabeçalho (carregado dinamicamente) -->
-      <swiss-menu></swiss-menu>
+    <!-- barras decorativas cromáticas baseadas na escala suíço-bauhaus revista -->
+    <div class="relative z-10 flex h-3 w-full">
+      <div class="flex-1 bg-ink"></div>
+      <div class="w-1/4 bg-accent"></div>
+      <div class="w-1/12 bg-warm-light"></div>
     </div>
-  </header>
-
-  <!-- barras decorativas cromáticas baseadas na escala suíço-bauhaus revista -->
-  <div class="relative z-10 flex h-3 w-full">
-    <div class="flex-1 bg-ink"></div>
-    <div class="w-1/4 bg-accent"></div>
-    <div class="w-1/12 bg-warm-light"></div>
   </div>
 
   <!-- layout principal de grelha suíça ocupando a horizontalidade total do contentor -->
-  <main class="relative z-10 flex-1 max-w-7xl mx-auto w-full px-6 py-10 space-y-8">
+  <main class="relative z-10 flex-1 max-w-7xl mx-auto w-full px-6 pt-48 pb-32">
 
     <!-- visualizador dinâmico de secções com integração total ao plano de fundo -->
-    <div class="relative min-h-[500px] flex flex-col justify-between space-y-8">
+    <div class="relative min-h-[500px] flex flex-col">
 
       <!-- ================= subpágina: sobre / cv ================= -->
-      <div id="sub-sobre" class="space-y-6">
-        <div class="flex justify-between items-baseline border-b pb-3 border-ink">
+      <div id="sub-sobre" class="space-y-6 mt-0">
+        <div class="flex justify-between items-baseline border-b pb-3 border-ink mt-0">
           <h2 class="text-2xl font-black tracking-tight text-ink">/sobre — perfil e cv integrado
           </h2>
           <span class="text-xs font-mono text-ink-mid">percurso e contacto</span>
@@ -116,8 +119,8 @@
       </div>
 
       <!-- ================= subpágina: acadêmico ================= -->
-      <div id="sub-acadêmico" class="hidden space-y-6">
-        <div class="flex justify-between items-baseline border-b pb-3 border-ink">
+      <div id="sub-acadêmico" class="hidden space-y-6 mt-0">
+        <div class="flex justify-between items-baseline border-b pb-3 border-ink mt-0">
           <h2 class="text-2xl font-black tracking-tight text-ink">/acadêmico — tese e
             visualizações</h2>
           <span class="text-xs font-mono text-ink-mid">resultados da investigação
@@ -179,8 +182,8 @@
       </div>
 
       <!-- ================= subpágina: nutshells ================= -->
-      <div id="sub-nutshells" class="hidden space-y-6">
-        <div class="flex justify-between items-baseline border-b pb-3 border-ink">
+      <div id="sub-nutshells" class="hidden space-y-6 mt-0">
+        <div class="flex justify-between items-baseline border-b pb-3 border-ink mt-0">
           <h2 class="text-2xl font-black tracking-tight text-ink">/nutshells — notas, ensaios e
             artigos</h2>
           <span class="text-xs font-mono text-ink-mid">plataformas de divulgação
@@ -218,6 +221,87 @@
           </nutshell-card>
 
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+
+          <!-- cartão 01 -->
+          <nutshell-card platform="plataforma" date="jun 2026"
+            title="modelagem de redes complexas com foco em densidade de dados estruturados"
+            tags="data science, grafos">
+            um guia prático sobre análise de grafos e formas eficientes de visualizar conectividade em grandes volumes
+            de informação.
+          </nutshell-card>
+
+          <!-- cartão 02 -->
+          <nutshell-card platform="plataforma" date="maio 2026" title="o papel da tipografia na visualização científica"
+            tags="tipografia, design suíço">
+            como famílias tipográficas herdeiras da univers melhoram a precisão na legibilidade técnica de gráficos e
+            dashboards analíticos.
+          </nutshell-card>
+
+          <!-- cartão 03 -->
+          <nutshell-card platform="plataforma" date="mar 2026"
+            title="geometria e espaço negativo: lições para dashboards digitais" tags="dashboard, front-end">
+            aplicando regras de espaço livre e contrastes absolutos herdados da escola de emil ruder no desenvolvimento
+            front-end moderno.
+          </nutshell-card>
+
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+
+          <!-- cartão 01 -->
+          <nutshell-card platform="plataforma" date="jun 2026"
+            title="modelagem de redes complexas com foco em densidade de dados estruturados"
+            tags="data science, grafos">
+            um guia prático sobre análise de grafos e formas eficientes de visualizar conectividade em grandes volumes
+            de informação.
+          </nutshell-card>
+
+          <!-- cartão 02 -->
+          <nutshell-card platform="plataforma" date="maio 2026" title="o papel da tipografia na visualização científica"
+            tags="tipografia, design suíço">
+            como famílias tipográficas herdeiras da univers melhoram a precisão na legibilidade técnica de gráficos e
+            dashboards analíticos.
+          </nutshell-card>
+
+          <!-- cartão 03 -->
+          <nutshell-card platform="plataforma" date="mar 2026"
+            title="geometria e espaço negativo: lições para dashboards digitais" tags="dashboard, front-end">
+            aplicando regras de espaço livre e contrastes absolutos herdados da escola de emil ruder no desenvolvimento
+            front-end moderno.
+          </nutshell-card>
+
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+
+          <!-- cartão 01 -->
+          <nutshell-card platform="plataforma" date="jun 2026"
+            title="modelagem de redes complexas com foco em densidade de dados estruturados"
+            tags="data science, grafos">
+            um guia prático sobre análise de grafos e formas eficientes de visualizar conectividade em grandes volumes
+            de informação.
+          </nutshell-card>
+
+          <!-- cartão 02 -->
+          <nutshell-card platform="plataforma" date="maio 2026" title="o papel da tipografia na visualização científica"
+            tags="tipografia, design suíço">
+            como famílias tipográficas herdeiras da univers melhoram a precisão na legibilidade técnica de gráficos e
+            dashboards analíticos.
+          </nutshell-card>
+
+          <!-- cartão 03 -->
+          <nutshell-card platform="plataforma" date="mar 2026"
+            title="geometria e espaço negativo: lições para dashboards digitais" tags="dashboard, front-end">
+            aplicando regras de espaço livre e contrastes absolutos herdados da escola de emil ruder no desenvolvimento
+            front-end moderno.
+          </nutshell-card>
+
+        </div>
+
+
+
       </div>
 
     </div>
@@ -225,19 +309,12 @@
   </main>
 
   <!-- rodapé técnico de fecho de página -->
-  <footer class="border-t-4 text-white mt-16 relative z-10 font-univers bg-ink border-ink">
-    <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+  <footer id="footer-fixo"
+    class="fixed bottom-0 left-0 w-full border-t-4 text-white z-50 font-univers bg-ink border-ink transition-transform duration-300 translate-y-0">
+    <div class="max-w-7xl mx-auto px-6 py-6 grid grid-cols-1 md:grid-cols-2 gap-8">
       <div>
         <h4 class="text-lg font-black text-warm-light">camilla perotto // publicação contínua
         </h4>
-        <p class="text-xs leading-relaxed max-w-sm mt-2 text-bg-surface opacity-85">
-          plataforma de documentação e portfólio baseada no rigor do estilo tipográfico internacional e nas filosofias
-          pedagógicas da bauhaus.
-        </p>
-      </div>
-      <div class="md:text-right text-xs flex flex-col justify-end space-y-1 text-accent-light">
-        <p>especificação tipográfica e cromática revista © 2026.</p>
-        <p>construído inteiramente em letras minúsculas.</p>
       </div>
     </div>
   </footer>
