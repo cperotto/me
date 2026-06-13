@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>camilla perotto // design suíço e taxonomia</title>
+  <!-- cdn do tailwind css para utilitários de estrutura e grelha -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- fontes do google: archivo (univers nos títulos) e plus jakarta sans (geométrica no corpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- folha de estilo centralizada do projeto -->
+  <link rel="stylesheet" href="style.css">
+  <!-- lógica e micro-animações do projeto -->
+  <script src="script.js" defer></script>
+</head>
+
+<body class="min-h-screen flex flex-col relative overflow-x-hidden font-univers">
+
+  <!-- grelha estrutural de apoio de engenharia -->
+  <div class="absolute inset-0 swiss-grid pointer-events-none opacity-50 z-0"></div>
+
+  <!-- cabeçalho técnico limpo com navegação em grelha integrada à direita -->
+  <header class="relative z-10 border-b-2 bg-surface border-ink">
+    <div class="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+      <div>
+        <h1 class="text-3xl md:text-4xl font-black tracking-tighter leading-none text-ink">
+          camilla perotto
+        </h1>
+      </div>
+
+      <!-- menu de subpáginas em grelha integrado ao cabeçalho (carregado dinamicamente) -->
+      <swiss-menu></swiss-menu>
+    </div>
+  </header>
+
+  <!-- barras decorativas cromáticas baseadas na escala suíço-bauhaus revista -->
+  <div class="relative z-10 flex h-3 w-full">
+    <div class="flex-1 bg-ink"></div>
+    <div class="w-1/4 bg-accent"></div>
+    <div class="w-1/12 bg-warm-light"></div>
+  </div>
+
+  <!-- layout principal de grelha suíça ocupando a horizontalidade total do contentor -->
+  <main class="relative z-10 flex-1 max-w-7xl mx-auto w-full px-6 py-10 space-y-8">
+
+    <!-- visualizador dinâmico de secções com integração total ao plano de fundo -->
+    <div class="relative min-h-[500px] flex flex-col justify-between space-y-8">
+
+      <!-- ================= subpágina: sobre / cv ================= -->
+      <div id="sub-sobre" class="space-y-6">
+        <div class="flex justify-between items-baseline border-b pb-3 border-ink">
+          <h2 class="text-2xl font-black tracking-tight text-ink">/sobre — perfil e cv integrado
+          </h2>
+          <span class="text-xs font-mono text-ink-mid">percurso e contacto</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pt-2">
+          <!-- coluna de perfil -->
+          <div class="md:col-span-4 space-y-4 font-geom-body">
+            <h3 class="text-xs font-bold uppercase tracking-widest font-univers text-ink-mid">//
+              resumo profissional</h3>
+            <p class="text-sm leading-relaxed text-ink">
+              arquitecto de sistemas visuais com foco no design sistemático baseado em grelhas estruturadas e tipografia
+              neutra neo-grotesca. especialista em optimizar fluxos de informação digital densa.
+            </p>
+            <div class="pt-2">
+              <h4 class="text-xs font-bold uppercase tracking-widest font-univers text-ink-mid">
+                // localização e contacto</h4>
+              <p class="text-xs mt-1 text-ink">porto, portugal — correio:
+                contacto@estilosuico.design</p>
+            </div>
+          </div>
+          <!-- coluna do cv em formato tradicional de bloco de texto corrido -->
+          <div class="md:col-span-8 border-l-2 pl-6 space-y-6 border-ink">
+            <h3 class="text-xs font-bold uppercase tracking-widest font-univers text-ink-mid">//
+              percurso relevante</h3>
+
+            <div class="space-y-6">
+              <!-- experiência 01 -->
+              <div>
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
+                  <h4 class="text-base font-bold font-univers text-ink">designer de sistemas
+                    sénior // estúdio h</h4>
+                  <span class="text-xs font-mono font-bold whitespace-nowrap text-ink-mid">2023
+                    — presente</span>
+                </div>
+                <p class="font-geom-body text-xs leading-relaxed mt-1 text-ink opacity-90">
+                  liderança no desenho de interfaces industriais e optimização tipográfica de relatórios analíticos de
+                  alta fidelidade.
+                </p>
+              </div>
+
+              <!-- experiência 02 -->
+              <div>
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
+                  <h4 class="text-base font-bold font-univers text-ink">designer de informação
+                    // agência de comunicação</h4>
+                  <span class="text-xs font-mono font-bold whitespace-nowrap text-ink-mid">2020
+                    — 2023</span>
+                </div>
+                <p class="font-geom-body text-xs leading-relaxed mt-1 text-ink opacity-90">
+                  desenvolvimento de estruturas gráficas baseadas em grelha modular rígida para suporte a grandes
+                  volumes de dados.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= subpágina: acadêmico ================= -->
+      <div id="sub-acadêmico" class="hidden space-y-6">
+        <div class="flex justify-between items-baseline border-b pb-3 border-ink">
+          <h2 class="text-2xl font-black tracking-tight text-ink">/acadêmico — tese e
+            visualizações</h2>
+          <span class="text-xs font-mono text-ink-mid">resultados da investigação
+            académica</span>
+        </div>
+
+        <p class="font-geom-body text-sm leading-relaxed text-ink">
+          investigação dedicada à modelação e optimização geométrica do espaço em ecrãs de densidade modular. a tese
+          propõe novos rácios de grelha que evitam a fadiga de leitura científica através de margens dinâmicas.
+        </p>
+
+        <!-- visualizador de dados geométrico (bg-card aplicado) -->
+        <div class="border-2 p-6 flex flex-col justify-between border-ink bg-card">
+          <div class="flex justify-between items-center text-xs font-mono border-b pb-3 mb-4 border-ink opacity-30">
+            <span class="text-ink">figura 02.1 // correlação de densidade tipográfica</span>
+            <span class="text-warm-text">rácio 1.618 unificado</span>
+          </div>
+
+          <!-- representação gráfica de nós e grelhas através de vetor limpo -->
+          <div class="w-full h-48 border relative overflow-hidden flex items-center justify-center bg-white border-ink">
+            <svg class="w-full h-full" viewBox="0 0 600 200">
+              <!-- linhas de grelha suíça -->
+              <line x1="100" y1="0" x2="100" y2="200" stroke="var(--color-border)" stroke-width="1"
+                stroke-dasharray="4" />
+              <line x1="200" y1="0" x2="200" y2="200" stroke="var(--color-border)" stroke-width="1"
+                stroke-dasharray="4" />
+              <line x1="300" y1="0" x2="300" y2="200" stroke="var(--color-border)" stroke-width="1"
+                stroke-dasharray="4" />
+              <line x1="400" y1="0" x2="400" y2="200" stroke="var(--color-border)" stroke-width="1"
+                stroke-dasharray="4" />
+              <line x1="500" y1="0" x2="500" y2="200" stroke="var(--color-border)" stroke-width="1"
+                stroke-dasharray="4" />
+
+              <line x1="0" y1="100" x2="600" y2="100" stroke="var(--color-border)" stroke-width="1"
+                stroke-dasharray="4" />
+
+              <!-- conectores ortogonais do gráfico -->
+              <polyline points="100,60 200,140 300,100 400,150 500,40" fill="none" stroke="var(--color-ink)"
+                stroke-width="2" />
+
+              <!-- nós estruturais em quadrados retos (sem círculos para evitar cantos curvos) -->
+              <rect x="95" y="55" width="10" height="10" fill="var(--color-warm)" />
+              <rect x="195" y="135" width="10" height="10" fill="var(--color-ink-mid)" />
+              <rect x="295" y="95" width="10" height="10" fill="var(--color-warm-light)" />
+              <rect x="395" y="145" width="10" height="10" fill="var(--color-ink)" />
+              <rect x="495" y="35" width="10" height="10" fill="var(--color-warm)" />
+            </svg>
+          </div>
+
+          <div class="mt-4 flex flex-wrap gap-4 text-xs font-mono text-ink">
+            <div><span class="inline-block w-2.5 h-2.5 mr-1 bg-warm"></span> pico
+              de retenção</div>
+            <div><span class="inline-block w-2.5 h-2.5 mr-1 bg-ink-mid"></span>
+              leitura ideal</div>
+            <div><span class="inline-block w-2.5 h-2.5 mr-1 bg-warm-light"></span>
+              margem flutuante</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= subpágina: nutshells ================= -->
+      <div id="sub-nutshells" class="hidden space-y-6">
+        <div class="flex justify-between items-baseline border-b pb-3 border-ink">
+          <h2 class="text-2xl font-black tracking-tight text-ink">/nutshells — notas, ensaios e
+            artigos</h2>
+          <span class="text-xs font-mono text-ink-mid">plataformas de divulgação
+            científica</span>
+        </div>
+
+        <p class="font-geom-body text-sm leading-relaxed text-ink">
+          peças curtas de divulgação técnica e teórica sobre ciência de dados, tipografia e a relação
+          geométrica das interfaces.
+        </p>
+
+        <!-- grelha ortogonal de cartões de nutshells (carregados dinamicamente via Web Component) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+
+          <!-- cartão 01 -->
+          <nutshell-card platform="plataforma" date="jun 2026"
+            title="modelagem de redes complexas com foco em densidade de dados estruturados"
+            tags="data science, grafos">
+            um guia prático sobre análise de grafos e formas eficientes de visualizar conectividade em grandes volumes
+            de informação.
+          </nutshell-card>
+
+          <!-- cartão 02 -->
+          <nutshell-card platform="plataforma" date="maio 2026" title="o papel da tipografia na visualização científica"
+            tags="tipografia, design suíço">
+            como famílias tipográficas herdeiras da univers melhoram a precisão na legibilidade técnica de gráficos e
+            dashboards analíticos.
+          </nutshell-card>
+
+          <!-- cartão 03 -->
+          <nutshell-card platform="plataforma" date="mar 2026"
+            title="geometria e espaço negativo: lições para dashboards digitais" tags="dashboard, front-end">
+            aplicando regras de espaço livre e contrastes absolutos herdados da escola de emil ruder no desenvolvimento
+            front-end moderno.
+          </nutshell-card>
+
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- rodapé técnico de fecho de página -->
+  <footer class="border-t-4 text-white mt-16 relative z-10 font-univers bg-ink border-ink">
+    <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h4 class="text-lg font-black text-warm-light">camilla perotto // publicação contínua
+        </h4>
+        <p class="text-xs leading-relaxed max-w-sm mt-2 text-bg-surface opacity-85">
+          plataforma de documentação e portfólio baseada no rigor do estilo tipográfico internacional e nas filosofias
+          pedagógicas da bauhaus.
+        </p>
+      </div>
+      <div class="md:text-right text-xs flex flex-col justify-end space-y-1 text-accent-light">
+        <p>especificação tipográfica e cromática revista © 2026.</p>
+        <p>construído inteiramente em letras minúsculas.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- caixa de confirmação de acções -->
+  <div id="toast-notif"
+    class="fixed bottom-4 right-4 bg-black text-white px-4 py-2 text-xs font-mono border-2 border-white hidden z-50 shadow-lg">
+    código copiado.
+  </div>
+
+</body>
+
+</html>
