@@ -1,47 +1,51 @@
-# walkthrough: refatoração e modularização do projeto
+# Walkthrough: Refatoração, Abstração e Modularização de Componentes
 
-este documento resume as melhorias estruturais e de estilização realizadas no projeto.
-
----
-
-## 1. componentes reutilizáveis (web components)
-foram extraídos componentes da página principal para arquivos html adjacentes com o objetivo de torná-los modulares e reutilizáveis via web components nativos (sem dependência de frameworks complexos):
-
-- **[menu.html](menu.html)**: contém a marcação do menu de abas em grelha.
-- **[card.html](card.html)**: modelo flexível para os cards com placeholders para injeção dinâmica de dados (`{{platform}}`, `{{date}}`, `{{title}}` e `{{content}}`).
-- **[index.html](index.html)**: consome as novas tags `<swiss-menu>` e `<nutshell-card>`, carregando o html adjacente via `fetch` assíncrono.
+Este documento resume as melhorias estruturais implementadas no projeto para isolar e modularizar os componentes do portfólio na pasta `components/`.
 
 ---
 
-## 2. centralização e gerenciamento de estilos (css)
-toda a lógica de estilo que estava embutida ou inline foi centralizada na raiz do projeto:
+## 1. Arquitetura da Pasta de Componentes
 
-- **[style.css](style.css)**:
-  - define todas as variáveis de cores (`:root`) do design system suíço/bauhaus.
-  - unifica as especificações de fontes (famílias `archivo` e `plus jakarta sans`) e regras globais de minúsculas e cantos ortogonais (`*`).
-  - cria classes utilitárias semânticas do projeto (como `.text-ink`, `.border-ink`, `.bg-card`) para substituir estilos inline redundantes.
-  - configura os seletores `swiss-menu` e `nutshell-card` com `display: contents` para não interferir nas grelhas flex/grid nativas.
+Criamos a pasta `components/` na raiz do projeto e extraímos as partes estruturais e de interface:
 
----
-
-## 3. desacoplamento de comportamento e micro-animações (js)
-para manter a estrutura limpa e modularizada, extraímos toda a lógica dinâmica dos arquivos html:
-
-- **[script.js](script.js)**:
-  - concentra as definições de classes dos web components (`SwissMenu` e `NutshellCard`).
-  - gerencia a lógica global de abas, navegação com transição animada de 8px (`nav_to`), sincronização visual do menu (`sync_menu_states`) e feedback visual em pop-up (`showtoast`).
-  - carrega de forma assíncrona no head de `index.html` utilizando o atributo `defer` para otimização de renderização.
+- **[components/header.html](components/header.html)**: Contém a marcação da seção do cabeçalho fixo, incluindo o título do portfólio, o contêiner do menu dinâmico e as faixas decorativas coloridas.
+- **[components/footer.html](components/footer.html)**: Contém o markup interno do rodapé fixo.
+- **[components/menu.html](components/menu.html)**: Contém os botões de controle de abas do menu de grelha.
+- **[components/card.html](components/card.html)**: Modelo abstrato com placeholders (`{{platform}}`, `{{date}}`, etc.) para o cartão de nutshells.
 
 ---
 
-## 4. resumo da arquitetura do projeto
-com a refatoração, a árvore do diretório principal ficou organizada da seguinte forma:
+## 2. Lógica de Carregamento Assíncrono (Web Components)
+
+Atualizamos o arquivo **[script.js](script.js)** com os seguintes aprimoramentos:
+
+- **Novos Componentes**: Criação das classes customizadas `SwissHeader` (`<swiss-header>`) e `SwissFooter` (`<swiss-footer>`).
+- **Otimização de Carregamento**: Implementação de cache de Promises para que templates (especialmente o cartão de nutshells, instanciado 12 vezes) sejam requisitados via rede apenas uma única vez, otimizando o tempo de carregamento e eliminando requisições redundantes.
+- **Hierarquia de Componentes**: Resolução automática e recursiva pelo navegador (o cabeçalho renderiza a tag `<swiss-menu>`, que por sua vez busca e instancia o menu).
+
+---
+
+## 3. Simplificação do Documento Principal
+
+O arquivo **[index.html](index.html)** foi drasticamente simplificado:
+
+- Substituição de mais de 40 linhas de marcação repetitiva de cabeçalho e rodapé por `<swiss-header></swiss-header>` e `<swiss-footer></swiss-footer>`.
+- Limpeza de arquivos obsoletos (`menu.html` e `card.html` removidos da raiz do projeto).
+
+---
+
+## 4. Nova Estrutura de Diretórios
+
+Com a refatoração concluída, a estrutura final de arquivos é:
 
 ```text
-├── index.html       # página principal do portfólio
-├── menu.html        # fragmento de html do menu de abas
-├── card.html        # template de cartões reutilizáveis
-├── style.css        # folha de estilo centralizada
-├── script.js        # comportamento e micro-animações desacopladas
-└── walkthrough.md   # documentação das alterações
+├── index.html            # página principal
+├── style.css             # folha de estilo unificada
+├── script.js             # comportamento e Web Components dinâmicos
+├── walkthrough.md        # walkthrough no projeto
+└── components/           # componentes abstratos do site
+    ├── header.html
+    ├── footer.html
+    ├── menu.html
+    └── card.html
 ```

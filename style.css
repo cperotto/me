@@ -26,6 +26,7 @@
 
 body {
   background-color: var(--color-bg-surface);
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%23e0d5be' stroke-width='0.5'/%3E%3C/svg%3E");
   color: var(--color-ink);
   font-family: 'archivo', -apple-system, blinkmacsystemfont, sans-serif;
   letter-spacing: -0.03em;
@@ -51,9 +52,7 @@ body {
 
 /* Grelha de precisão suíça de suporte gráfico */
 .swiss-grid {
-  background-size: 40px 40px;
-  background-image: linear-gradient(to right, rgba(2, 48, 71, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(2, 48, 71, 0.03) 1px, transparent 1px);
+  display: none;
 }
 
 /* ==========================================================================
