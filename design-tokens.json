@@ -1,0 +1,49 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "meta": {
+    "name": "camilla perotto — estilo suíço / bauhaus",
+    "source": "style.css",
+    "notes": "International Typographic Style. Global rules: all text lowercase, zero border-radius."
+  },
+  "color": {
+    "ink":          { "value": "#023047", "comment": "body text, base geometry, primary borders, footer bg" },
+    "ink-mid":      { "value": "#0d6e8a", "comment": "secondary headings, mono metadata, muted text" },
+    "bg-surface":   { "value": "#ede5d8", "comment": "page background (cream paper), reversed text on dark" },
+    "bg-card":      { "value": "#e1d6c6", "comment": "card / support backgrounds" },
+    "border":       { "value": "#b8d8e8", "comment": "passive dividers, grid lines" },
+    "accent":       { "value": "#219ebc", "comment": "links, hover, active focus" },
+    "accent-light": { "value": "#8ecae6", "comment": "graphic fills, visual support" },
+    "warm":         { "value": "#fb8500", "comment": "attention tags, active badges, highlights" },
+    "warm-light":   { "value": "#ffb703", "comment": "state icons, detail elements, footer title" },
+    "warm-text":    { "value": "#c06400", "comment": "warm text/icons legible on light bg" }
+  },
+  "font": {
+    "family": {
+      "heading": { "value": "archivo, -apple-system, blinkmacsystemfont, sans-serif", "comment": "univers-style grotesque; .font-univers / default" },
+      "body":    { "value": "'plus jakarta sans', sans-serif", "comment": ".font-geom-body running prose" },
+      "mono":    { "value": "monospace", "comment": "metadata, dates, tags, captions, legends" }
+    },
+    "weight": { "regular": 400, "semibold": 600, "bold": 700, "black": 900 },
+    "tracking": {
+      "tight":  { "value": "-0.03em", "comment": "global body default" },
+      "body":   { "value": "-0.02em", "comment": ".font-geom-body" }
+    }
+  },
+  "layout": {
+    "container-max": { "value": "80rem", "comment": "tailwind max-w-7xl" },
+    "gutter":        { "value": "1.5rem", "comment": "px-6" },
+    "grid-cols":     { "value": 12 },
+    "card-cols":     { "value": 3 }
+  },
+  "border": {
+    "radius":          { "value": "0", "comment": "global !important — strictly orthogonal" },
+    "width-structure": { "value": "2px", "comment": "border-2 border-ink" },
+    "width-divider":   { "value": "1px", "comment": "passive dividers" }
+  },
+  "motion": {
+    "fast":   { "value": "150ms", "comment": "square-btn, toast" },
+    "base":   { "value": "200ms", "comment": "color transitions" },
+    "reveal": { "value": "300ms", "comment": "header/footer scroll reveal" },
+    "ease-toast": { "value": "cubic-bezier(0.25, 1, 0.5, 1)" }
+  }
+}
