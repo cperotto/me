@@ -11,6 +11,8 @@ export { default as Header } from './components/Header'
 export { default as Footer } from './components/Footer'
 export { default as Nav } from './components/Nav'
 export { default as ColorBar } from './components/ColorBar'
+export { default as GridBackground } from './components/GridBackground'
+export type { GridBackgroundProps } from './components/GridBackground'
 
 export { default as SectionHeader } from './components/SectionHeader'
 export type { SectionHeaderProps } from './components/SectionHeader'
