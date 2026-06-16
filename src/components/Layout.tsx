@@ -1,12 +1,19 @@
-import { useEffect, useRef } from 'react'
-import Header from './Header.jsx'
-import Footer from './Footer.jsx'
+import { useEffect, useRef, type ReactNode, type RefObject } from 'react'
+import Header from './Header'
+import Footer from './Footer'
+
+export interface LayoutProps {
+  children: ReactNode
+}
 
 // controle do header/footer fixos baseado na rolagem (porte de script.js):
 // - no fim da página: ambos visíveis
 // - rolando para baixo: footer some, header recolhe até sobrar a faixa de cores
 // - rolando para cima / no topo: ambos reaparecem
-function useScrollReveal(headerRef, footerRef) {
+function useScrollReveal(
+  headerRef: RefObject<HTMLElement | null>,
+  footerRef: RefObject<HTMLElement | null>,
+) {
   useEffect(() => {
     let lastScrollY = window.scrollY
     const onScroll = () => {
@@ -34,9 +41,9 @@ function useScrollReveal(headerRef, footerRef) {
   }, [headerRef, footerRef])
 }
 
-export default function Layout({ children }) {
-  const headerRef = useRef(null)
-  const footerRef = useRef(null)
+export default function Layout({ children }: LayoutProps) {
+  const headerRef = useRef<HTMLDivElement>(null)
+  const footerRef = useRef<HTMLElement>(null)
   useScrollReveal(headerRef, footerRef)
 
   return (

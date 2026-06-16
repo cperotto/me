@@ -1,5 +1,24 @@
+export interface NutshellCardProps {
+  /** etiqueta de origem (ex.: "plataforma") */
+  platform: string
+  /** data de publicação, formato livre (ex.: "jun 2026") */
+  date: string
+  /** título principal, em univers */
+  title: string
+  /** resumo de apoio, em plus jakarta sans */
+  summary: string
+  /** etiquetas temáticas */
+  tags: string[]
+}
+
 // cartão de nutshell: meta (plataforma + data), título, resumo e etiquetas
-export default function NutshellCard({ platform, date, title, summary, tags }) {
+export default function NutshellCard({
+  platform,
+  date,
+  title,
+  summary,
+  tags,
+}: NutshellCardProps) {
   return (
     <div className="border-2 p-6 flex flex-col justify-between space-y-4 border-ink bg-card">
       <div className="space-y-3">

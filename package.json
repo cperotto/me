@@ -4,10 +4,21 @@
   "version": "0.1.0",
   "type": "module",
   "description": "portfólio camilla perotto — design suíço / bauhaus (react + vite)",
+  "module": "./dist-lib/index.es.js",
+  "types": "./dist-lib/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist-lib/src/index.d.ts",
+      "import": "./dist-lib/index.es.js"
+    },
+    "./styles.css": "./dist-lib/style.css"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:lib": "vite build --config vite.lib.config.ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "react": "^19.2.7",
@@ -16,8 +27,12 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.2",
     "tailwindcss": "^4.3.1",
-    "vite": "^8.0.16"
+    "typescript": "^6.0.3",
+    "vite": "^8.0.16",
+    "vite-plugin-dts": "^5.0.2"
   }
 }

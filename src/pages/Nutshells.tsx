@@ -1,6 +1,6 @@
-import SectionHeader from '../components/SectionHeader.jsx'
-import NutshellCard from '../components/NutshellCard.jsx'
-import { nutshells } from '../data/nutshells.js'
+import SectionHeader from '../components/SectionHeader'
+import NutshellCard from '../components/NutshellCard'
+import { nutshells } from '../data/nutshells'
 
 // o layout original mostra o trio de cartões repetido 4× (12 cartões).
 const cards = Array.from({ length: 4 }).flatMap(() => nutshells)

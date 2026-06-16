@@ -1,4 +1,4 @@
-import SectionHeader from '../components/SectionHeader.jsx'
+import SectionHeader from '../components/SectionHeader'
 
 const gridLines = [100, 200, 300, 400, 500]
 const legend = [

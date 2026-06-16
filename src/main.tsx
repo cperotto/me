@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { HashRouter } from 'react-router-dom'
-import App from './App.jsx'
+import App from './App'
 import './index.css'
 
 // HashRouter (URLs com #/) é o caminho à prova de falhas no github pages:
 // não exige reescrita de servidor nem o truque do 404.html para deep links.
 // ver DEPLOYMENT.md para a alternativa de URLs limpas (BrowserRouter).
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HashRouter>
       <App />

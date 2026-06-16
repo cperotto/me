@@ -1,0 +1,31 @@
+{
+  "pkg": "me",
+  "globalName": "MeDS",
+  "shape": "package",
+  "buildCmd": "npm run build:lib",
+  "srcDir": "src",
+  "tsconfig": "./tsconfig.json",
+  "cssEntry": "./dist-lib/style.css",
+  "componentSrcMap": {
+    "Layout": "src/components/Layout.tsx",
+    "Header": "src/components/Header.tsx",
+    "Footer": "src/components/Footer.tsx",
+    "Nav": "src/components/Nav.tsx",
+    "ColorBar": "src/components/ColorBar.tsx",
+    "SectionHeader": "src/components/SectionHeader.tsx",
+    "NutshellCard": "src/components/NutshellCard.tsx",
+    "GithubIcon": "src/components/icons.tsx",
+    "LinkedinIcon": "src/components/icons.tsx",
+    "ArrowUpRightIcon": "src/components/icons.tsx"
+  },
+  "previewArgs": {
+    "SectionHeader": { "title": "/ sobre", "caption": "mestrado" },
+    "NutshellCard": {
+      "platform": "plataforma",
+      "date": "jun 2026",
+      "title": "o papel da tipografia na visualização científica",
+      "summary": "como famílias tipográficas herdeiras da univers melhoram a precisão na legibilidade técnica.",
+      "tags": ["tipografia", "design suíço"]
+    }
+  }
+}

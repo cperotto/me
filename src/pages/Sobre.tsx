@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import SectionHeader from '../components/SectionHeader.jsx'
-import { GithubIcon, LinkedinIcon, ArrowUpRightIcon } from '../components/icons.jsx'
+import SectionHeader from '../components/SectionHeader'
+import { GithubIcon, LinkedinIcon, ArrowUpRightIcon } from '../components/icons'
 
 const labelClass =
   'text-base font-bold uppercase tracking-widest font-univers text-ink-mid'

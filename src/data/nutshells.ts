@@ -1,7 +1,11 @@
+import type { NutshellCardProps } from '../components/NutshellCard'
+
+export type Nutshell = NutshellCardProps
+
 // conteúdo dos cartões de nutshells. o html original repetia o mesmo trio
 // de cartões 4× (12 no total); aqui o trio fica como fonte única e é
 // replicado na página para preservar a paridade visual.
-export const nutshells = [
+export const nutshells: Nutshell[] = [
   {
     platform: 'plataforma',
     date: 'jun 2026',

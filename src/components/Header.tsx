@@ -1,10 +1,10 @@
 import { forwardRef } from 'react'
-import Nav from './Nav.jsx'
-import ColorBar from './ColorBar.jsx'
+import Nav from './Nav'
+import ColorBar from './ColorBar'
 
 // cabeçalho fixo: título + menu de grelha + faixa cromática.
 // recebe ref para que o Layout controle o reveal no scroll.
-const Header = forwardRef(function Header(_props, ref) {
+const Header = forwardRef<HTMLDivElement>(function Header(_props, ref) {
   return (
     <div
       ref={ref}

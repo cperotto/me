@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 
-const Footer = forwardRef(function Footer(_props, ref) {
+const Footer = forwardRef<HTMLElement>(function Footer(_props, ref) {
   return (
     <footer
       ref={ref}
