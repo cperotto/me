@@ -2,7 +2,7 @@
   "$schema": "https://design-tokens.github.io/community-group/format/",
   "meta": {
     "name": "camilla perotto — estilo suíço / bauhaus",
-    "source": "style.css",
+    "source": "src/index.css",
     "notes": "International Typographic Style. Global rules: all text lowercase, zero border-radius."
   },
   "color": {

@@ -5,19 +5,20 @@ International Typographic Style (Swiss) / Bauhaus interpretation: orthogonal
 geometry, a tight functional palette, hard borders, mono labels, and an
 all-lowercase voice.
 
-> Stack: static HTML + the Tailwind **CDN** (`cdn.tailwindcss.com`) for layout
-> utilities, plus a small layer of CSS custom properties and semantic utility
-> classes in [`style.css`](style.css). There is no build step. Brand colors are
-> applied through the project's own `bg-*` / `text-*` / `border-*` helpers, **not**
-> Tailwind's default palette.
+> Stack: **React + Vite**, with **Tailwind** bundled via `@tailwindcss/vite`
+> (`npm run build`). The tokens, global rules, and semantic utility classes live in
+> [`src/index.css`](src/index.css); the UI is composed from real components in
+> [`src/components/`](src/components/) and pages in [`src/pages/`](src/pages/).
+> Brand colors are applied through the project's own `bg-*` / `text-*` / `border-*`
+> helpers, **not** Tailwind's default palette.
 
 ---
 
 ## 1. Foundational rules
 
 These two rules are applied **globally with `!important`** to every element
-(`*` selector in [`style.css`](style.css)) and are the heart of the system. Honor
-them everywhere — they are non-negotiable, not per-component choices.
+(`*` selector in [`src/index.css`](src/index.css)) and are the heart of the system.
+Honor them everywhere — they are non-negotiable, not per-component choices.
 
 | Rule | Implementation | Intent |
 |------|----------------|--------|
@@ -25,7 +26,7 @@ them everywhere — they are non-negotiable, not per-component choices.
 | **No rounded corners** | `border-radius: 0 !important` | Strictly orthogonal geometry — squares and rectangles only, never circles |
 
 Corollaries seen throughout the work:
-- **Squares, not circles.** Even data-viz nodes are `<rect>`, never `<circle>` (see [`acadêmico.html`](acadêmico.html)).
+- **Squares, not circles.** Even data-viz nodes are `<rect>`, never `<circle>` (see [`Academico.jsx`](src/pages/Academico.jsx)).
 - **Hard 2px borders** (`border-2 border-ink`) define structure; thin 1px borders (`border`) act as passive dividers.
 - **Mono labels** carry metadata, using `//`, `/`, and `[ / … ]` as structural markers.
 
@@ -33,8 +34,8 @@ Corollaries seen throughout the work:
 
 ## 2. Color tokens
 
-Defined as CSS custom properties on `:root` in [`style.css`](style.css). Hex values
-are the source of truth. (Note: the in-file comments label these as a "navy" ramp,
+Defined as CSS custom properties on `:root` in [`src/index.css`](src/index.css). Hex
+values are the source of truth. (Note: the in-file comments label these as a "navy" ramp,
 but the actual values are a **teal → cyan** cool ramp plus a **warm amber** ramp on
 a **cream paper** base — a Swiss palette of cool structure + warm accent.)
 
@@ -65,7 +66,7 @@ a **cream paper** base — a Swiss palette of cool structure + warm accent.)
 
 ### Semantic utility classes
 
-`style.css` exposes each token as a class (all `!important`):
+`src/index.css` exposes each token as a class (all `!important`):
 - Text: `.text-ink` · `.text-ink-mid` · `.text-warm-text` · `.text-warm-light` · `.text-accent-light` · `.text-bg-surface`
 - Background: `.bg-surface` · `.bg-card` · `.bg-ink` · `.bg-ink-mid` · `.bg-accent` · `.bg-warm` · `.bg-warm-light`
 - Border: `.border-ink` · `.border-border`
@@ -83,7 +84,7 @@ Two Google Fonts, both loaded all-lowercase per the global rule.
 
 | Family | Token / class | Weights | Role |
 |--------|---------------|---------|------|
-| **Archivo** | `--font` (body default), `.font-univers` | 400 / 700 / 900 | A Univers-style grotesque — headings, structure, UI |
+| **Archivo** | body default · `.font-univers` | 400 / 700 / 900 | A Univers-style grotesque — headings, structure, UI |
 | **Plus Jakarta Sans** | `.font-geom-body` | 300 / 400 / 600 / 700 | Geometric humanist — running body prose |
 | *(mono)* | Tailwind `font-mono` | — | metadata, dates, tags, legends, captions |
 
@@ -120,68 +121,69 @@ never from color alone and never from capitalization.
 | Main offset | `pt-44 md:pt-32 pb-32` to clear fixed header + footer |
 | Column divider | `border-l pl-6 border-ink` |
 
-Both header and footer are **fixed** and reveal/hide on scroll
-(see [`script.js`](script.js)): scrolling down slides the footer out and collapses
-the header to just its color bars (`translateY(calc(-100% + 0.75rem))`); scrolling
-up or reaching the bottom brings both back. Transitions: `duration-300`.
+Both header and footer are **fixed** and reveal/hide on scroll (the `useScrollReveal`
+hook in [`Layout.jsx`](src/components/Layout.jsx)): scrolling down slides the footer
+out and collapses the header to just its color bars
+(`translateY(calc(-100% + 0.75rem))`); scrolling up or reaching the bottom brings
+both back. Transitions: `duration-300`.
 
 ---
 
 ## 5. Components
 
-The repo describes these as reusable parts. The `components/` folder and
-`<swiss-header>` / `<swiss-footer>` web components mentioned in
-[`walkthrough.md`](walkthrough.md) are **aspirational — not present in the current
-code**; the patterns below are extracted from the live inline markup in the three
-HTML pages.
+Each pattern is a real React component in [`src/components/`](src/components/),
+composed by the pages in [`src/pages/`](src/pages/). File references below point to
+the implementation.
 
-### Header
+### Header — [`Header.jsx`](src/components/Header.jsx)
 `bg-surface border-b-2 border-ink`, fixed top. Holds the h1 name and the nav, then
-the decorative color bar strip.
+the decorative color bar strip. Forwards a `ref` so `Layout` drives the scroll reveal.
 
-### Color bar strip
+### Color bar strip — [`ColorBar.jsx`](src/components/ColorBar.jsx)
 A signature Bauhaus motif: a `h-3` flex row of unequal blocks —
 `flex-1 bg-ink` · `w-1/4 bg-accent` · `w-1/12 bg-warm-light`.
 
-### Nav tabs (`.square-btn`)
+### Nav tabs — [`Nav.jsx`](src/components/Nav.jsx) (`.square-btn`)
 ```
 px-4 py-2 border-2 border-ink text-ink text-xs font-bold tracking-wider
 ```
-Label format `[ / name ]`. **Active state** (`.square-btn.active`) inverts to
-`bg-ink` + `text-bg-surface`. Transition `all 150ms ease-in-out`.
+Label format `[ / name ]`. Built on React Router `NavLink`; the **active route**
+adds `.active`, inverting to `bg-ink` + `text-bg-surface`. Transition `all 150ms ease-in-out`.
 
-### Section header
+### Section header — [`SectionHeader.jsx`](src/components/SectionHeader.jsx)
 `flex justify-between items-baseline border-b pb-3 border-ink`, h2 prefixed with
 `/`, optional right-aligned mono caption (`text-xs font-mono text-ink-mid`).
 
-### Nutshell card
+### Nutshell card — [`NutshellCard.jsx`](src/components/NutshellCard.jsx)
 ```
 border-2 border-ink bg-card p-6 flex flex-col justify-between space-y-4
 ```
+- Props: `platform`, `date`, `title`, `summary`, `tags[]` (content in [`src/data/nutshells.js`](src/data/nutshells.js)).
 - Meta row: `plataforma` label (`text-[10px] font-mono font-bold tracking-widest text-warm-text`) + date (`text-ink-mid opacity-80`).
 - Title h3 (`text-lg md:text-xl font-bold font-univers`).
 - Body `font-geom-body text-sm leading-relaxed`.
 - **Tag chips:** `px-2 py-0.5 border border-ink bg-surface text-ink-mid text-[9px] font-mono`.
 
-### Data-viz panel
+### Data-viz panel — in [`Academico.jsx`](src/pages/Academico.jsx)
 `border-2 border-ink bg-card` card with a caption row, an inner `bg-white` plot box,
 and a **Swiss SVG chart**: dashed `--color-border` grid lines, an orthogonal
 `polyline` connector in `--color-ink`, square `<rect>` nodes colored from the warm
 ramp, and a mono legend with `2.5×2.5` square swatches.
 
-### Footer
+### Footer — [`Footer.jsx`](src/components/Footer.jsx)
 `fixed bottom-0 bg-ink border-t-4 border-ink text-white`, name in
-`text-lg font-black text-warm-light`.
+`text-lg font-black text-warm-light`. Forwards a `ref` for the scroll reveal.
 
-### Toast
-`fixed bottom-4 right-4 bg-black text-white border-2 border-white px-4 py-2
-text-xs font-mono`, hidden by default; fades in (150ms) and auto-hides after 2s
-(`showtoast()` in [`script.js`](script.js)).
-
-### Icons
+### Icons — [`icons.jsx`](src/components/icons.jsx)
 Inline SVG, [Lucide](https://lucide.dev)-style: `stroke-width="2"`,
 `stroke="currentColor"`, no fill — so they inherit the cool ramp and shift to
-`--color-accent` on hover. Links use a `group` + arrow icon hover pattern.
+`--color-accent` on hover. Links use a `group` + arrow icon hover pattern
+(`GithubIcon`, `LinkedinIcon`, `ArrowUpRightIcon`).
+
+> **Removed in the React migration:** the original pages carried a `#toast-notif`
+> element + `showtoast()` in `script.js`, but nothing ever triggered it (no
+> copy-to-clipboard action existed). It was dropped as dead UI. Reintroduce a
+> `Toast` component if/when an action needs confirmation feedback.
 
 ---
 
@@ -190,7 +192,6 @@ Inline SVG, [Lucide](https://lucide.dev)-style: `stroke-width="2"`,
 Restrained and functional:
 - Buttons / colors: `transition-colors duration-200`, `square-btn` `150ms`.
 - Header/footer scroll reveal: `transition-transform duration-300`.
-- Toast: `cubic-bezier(0.25, 1, 0.5, 1)`, 150ms in, 2s dwell.
 
 No decorative animation — motion only confirms state or aids reading.
 
