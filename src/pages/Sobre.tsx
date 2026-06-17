@@ -126,6 +126,23 @@ export default function Sobre() {
               </div>
             </div>
           </div>
+          {/* certificações */}
+          <div className="space-y-6">
+            <h3 className={labelClass}>{t('certificacoes_label')}</h3>
+            <div className="space-y-6">
+              <div>
+                <div className="flex flex-wrap items-baseline gap-2">
+                  <h4 className="text-base font-bold font-univers text-ink">
+                    cp3p
+                  </h4>
+
+                  <p className="font-mono text-xs text-ink-mid uppercase tracking-wider">
+                    {t('cert_levels')}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
