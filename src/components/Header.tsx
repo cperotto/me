@@ -19,9 +19,11 @@ const Header = forwardRef<HTMLDivElement>(function Header(_props, ref) {
               camilla perotto
             </h1>
           </div>
+          <div className="ml-auto pr-[calc(8vw/12-2.5rem)]">
+            <LanguageSwitcher />
+          </div>
           <div className="flex flex-wrap items-end gap-2">
             <Nav />
-            <LanguageSwitcher />
           </div>
         </div>
       </header>

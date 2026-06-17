@@ -14,7 +14,7 @@ export default function Nav() {
   ]
 
   return (
-    <nav id="menu-grelha" className="flex flex-wrap gap-2">
+    <nav id="menu-grelha" className="flex flex-wrap items-center gap-2">
       {items.map(({ to, label, end }) => (
         <NavLink
           key={to}

@@ -3,9 +3,6 @@ import { useTranslation } from 'react-i18next'
 const LANGS = ['pt', 'en'] as const
 const STORAGE_KEY = 'lang'
 
-const btn =
-  'square-btn px-3 py-2 text-xs font-bold tracking-wider border-ink text-ink'
-
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation()
   const current = i18n.language
@@ -16,21 +13,21 @@ export default function LanguageSwitcher() {
   }
 
   return (
-    <div className="flex border-2 border-ink">
-      {LANGS.map((lang, idx) => (
+    <span className="flex flex-col items-start text-xs tracking-wider leading-tight">
+      {LANGS.map((lang) => (
         <button
           key={lang}
           onClick={() => set(lang)}
           aria-label={`switch to ${lang}`}
           className={
             current === lang
-              ? `${btn} active ${idx > 0 ? 'border-l-2' : ''}`
-              : `${btn} ${idx > 0 ? 'border-l-2' : ''}`
+              ? 'font-bold text-ink'
+              : 'font-normal text-ink/30 hover:text-ink/60 transition-colors'
           }
         >
           {lang}
         </button>
       ))}
-    </div>
+    </span>
   )
 }
