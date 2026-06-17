@@ -1,6 +1,7 @@
 import { forwardRef } from 'react'
 import Nav from './Nav'
 import ColorBar from './ColorBar'
+import LanguageSwitcher from './LanguageSwitcher'
 
 // cabeçalho fixo: título + menu de grelha + faixa cromática.
 // recebe ref para que o Layout controle o reveal no scroll.
@@ -18,7 +19,10 @@ const Header = forwardRef<HTMLDivElement>(function Header(_props, ref) {
               camilla perotto
             </h1>
           </div>
-          <Nav />
+          <div className="flex flex-wrap items-end gap-2">
+            <Nav />
+            <LanguageSwitcher />
+          </div>
         </div>
       </header>
       <ColorBar />

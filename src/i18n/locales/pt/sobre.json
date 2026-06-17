@@ -1,0 +1,20 @@
+{
+  "section_title": "/ sobre",
+  "resumo_label": "// resumo profissional",
+  "bio": "engenheira civil especialista em transportes, atuando no planejamento e avaliação de políticas públicas. construindo pontes entre a visão analítica com estratégia para desenvolvimento de investimentos no setor de transportes.",
+  "formacao_label": "// formação acadêmica",
+  "bach_degree": "bacharelado em engenharia civil // universidade de são paulo",
+  "bach_detail": "ênfase em engenharia de transportes",
+  "master_degree": "mestrado em políticas públicas // insper",
+  "master_detail": "os movimentos da acessibilidade: interações entre regulação, uso do solo e mobilidade em são paulo entre 2013 e 2022",
+  "trajetoria_label": "// trajetória profissional",
+  "job1_title": "coordenadora geral de instrumentos de planejamento // ministério dos transportes",
+  "job1_period": "jul/2025 - presente",
+  "job1_tags": "infraestrutura de transporte • políticas públicas",
+  "job2_title": "consultora (short-term) // banco mundial",
+  "job2_period": "mai/2025 — jul/2025",
+  "job2_tags": "transporte público • governança de dados • transição energética",
+  "job3_title": "lead data scientist // scipopulis",
+  "job3_period": "dez/2019 — jun/2025",
+  "job3_tags": "mobilidade urbana • geoprocessamento em tempo real • otimização operacional"
+}

@@ -23,5 +23,4 @@ export type { NutshellCardProps } from './components/NutshellCard'
 export { GithubIcon, LinkedinIcon, ArrowUpRightIcon } from './components/icons'
 export type { IconProps } from './components/icons'
 
-export { nutshells } from './data/nutshells'
 export type { Nutshell } from './data/nutshells'

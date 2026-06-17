@@ -1,0 +1,28 @@
+{
+  "section_title": "/ nutshells — notes, essays and articles",
+  "caption": "scientific communication platforms",
+  "description": "short pieces of technical and theoretical communication about data science, typography, and the geometric relationship of interfaces.",
+  "articles": [
+    {
+      "platform": "platform",
+      "date": "jun 2026",
+      "title": "complex network modeling with a focus on structured data density",
+      "summary": "a practical guide to graph analysis and efficient ways to visualize connectivity in large volumes of information.",
+      "tags": ["data science", "graphs"]
+    },
+    {
+      "platform": "platform",
+      "date": "may 2026",
+      "title": "the role of typography in scientific visualization",
+      "summary": "how typographic families descended from univers improve technical readability precision in analytical charts and dashboards.",
+      "tags": ["typography", "swiss design"]
+    },
+    {
+      "platform": "platform",
+      "date": "mar 2026",
+      "title": "geometry and negative space: lessons for digital dashboards",
+      "summary": "applying free-space rules and absolute contrasts inherited from the emil ruder school in modern front-end development.",
+      "tags": ["dashboard", "front-end"]
+    }
+  ]
+}

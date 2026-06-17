@@ -1,0 +1,10 @@
+{
+  "section_title": "/ acadêmico",
+  "caption": "mestrado",
+  "description": "investigação dedicada à modelação e optimização geométrica do espaço em ecrãs de densidade modular. a tese propõe novos rácios de grelha que evitam a fadiga de leitura científica através de margens dinâmicas.",
+  "figure_label": "figura 02.1 // correlação de densidade tipográfica",
+  "ratio_label": "rácio 1.618 unificado",
+  "legend_peak": "pico de retenção",
+  "legend_ideal": "leitura ideal",
+  "legend_margin": "margem flutuante"
+}

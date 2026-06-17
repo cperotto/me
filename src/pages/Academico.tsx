@@ -1,30 +1,30 @@
+import { useTranslation } from 'react-i18next'
 import SectionHeader from '../components/SectionHeader'
 
 const gridLines = [100, 200, 300, 400, 500]
-const legend = [
-  { color: 'bg-warm', label: 'pico de retenção' },
-  { color: 'bg-ink-mid', label: 'leitura ideal' },
-  { color: 'bg-warm-light', label: 'margem flutuante' },
-]
 
 export default function Academico() {
+  const { t } = useTranslation('academico')
+
+  const legend = [
+    { color: 'bg-warm', label: t('legend_peak') },
+    { color: 'bg-ink-mid', label: t('legend_ideal') },
+    { color: 'bg-warm-light', label: t('legend_margin') },
+  ]
+
   return (
     <div className="space-y-6 mt-0">
-      <SectionHeader title="/ acadêmico" caption="mestrado" />
+      <SectionHeader title={t('section_title')} caption={t('caption')} />
 
       <p className="font-geom-body text-sm leading-relaxed text-ink">
-        investigação dedicada à modelação e optimização geométrica do espaço em
-        ecrãs de densidade modular. a tese propõe novos rácios de grelha que
-        evitam a fadiga de leitura científica através de margens dinâmicas.
+        {t('description')}
       </p>
 
       {/* visualizador de dados geométrico */}
       <div className="border-2 p-6 flex flex-col justify-between border-ink bg-card">
         <div className="flex justify-between items-center text-xs font-mono border-b pb-3 mb-4 border-ink opacity-30">
-          <span className="text-ink">
-            figura 02.1 // correlação de densidade tipográfica
-          </span>
-          <span className="text-warm-text">rácio 1.618 unificado</span>
+          <span className="text-ink">{t('figure_label')}</span>
+          <span className="text-warm-text">{t('ratio_label')}</span>
         </div>
 
         <div className="w-full h-48 border relative overflow-hidden flex items-center justify-center bg-white border-ink">

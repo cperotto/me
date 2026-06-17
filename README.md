@@ -28,17 +28,70 @@ src/
     ColorBar.tsx        faixa cromática suíço-bauhaus
     Footer.tsx          rodapé fixo
     GridBackground.tsx  fundo de página com malha em bege
-    Header.tsx          cabeçalho fixo (título + nav + colorbar)
+    Header.tsx          cabeçalho fixo (título + nav + colorbar + seletor de idioma)
+    LanguageSwitcher.tsx botão [ pt | en ] no cabeçalho
     Layout.tsx          wrapper completo (header + main + footer)
     Nav.tsx             navegação com links ativos (react-router-dom)
     NutshellCard.tsx    card de nutshell (plataforma, data, título, resumo, tags)
     SectionHeader.tsx   cabeçalho de seção (título + legenda mono)
     icons.tsx           GithubIcon, LinkedinIcon, ArrowUpRightIcon
   data/
-    nutshells.ts        conteúdo das nutshells
+    nutshells.ts        tipo Nutshell (alias de NutshellCardProps)
+  i18n/
+    index.ts            init do i18next (lê localStorage, sem plugins externos)
+    types.ts            augmentation TypeScript para type-safety das chaves
+    locales/
+      pt/               português (idioma padrão)
+        common.json       labels de navegação
+        sobre.json        página sobre
+        academico.json    página acadêmico
+        nutshells.json    página nutshells + array de artigos
+      en/               inglês
+        common.json
+        sobre.json
+        academico.json
+        nutshells.json
   index.ts            barrel da biblioteca (entrada do build:lib)
   index.css           tokens tailwind + classes semânticas globais
 ```
+
+## idiomas
+
+o site usa **i18next** + **react-i18next**. o idioma ativo é salvo em `localStorage` (chave `lang`) e lido de forma síncrona antes do primeiro render — sem flash.
+
+idiomas disponíveis: `pt` (padrão), `en`.
+
+### adicionar um novo idioma (ex: espanhol)
+
+1. criar os arquivos de locale:
+   ```
+   src/i18n/locales/es/common.json
+   src/i18n/locales/es/sobre.json
+   src/i18n/locales/es/academico.json
+   src/i18n/locales/es/nutshells.json
+   ```
+   copiar os arquivos `pt/` como base e traduzir os valores.
+
+2. registrar em `src/i18n/index.ts` — importar os JSONs e adicionar a entrada `es` em `resources`:
+   ```ts
+   import esCommon from './locales/es/common.json'
+   // ...
+   resources: {
+     pt: { ... },
+     en: { ... },
+     es: { common: esCommon, sobre: esSobre, ... },
+   }
+   ```
+
+3. expor no seletor em `src/components/LanguageSwitcher.tsx`:
+   ```ts
+   const LANGS = ['pt', 'en', 'es'] as const
+   ```
+
+4. atualizar o guard de validação em `src/i18n/index.ts`:
+   ```ts
+   const lng = ['pt', 'en', 'es'].includes(saved ?? '') ? saved! : 'pt'
+   ```
 
 ## biblioteca de componentes
 

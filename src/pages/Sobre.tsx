@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import SectionHeader from '../components/SectionHeader'
 import { GithubIcon, LinkedinIcon, ArrowUpRightIcon } from '../components/icons'
 
@@ -6,21 +7,17 @@ const labelClass =
   'text-base font-bold uppercase tracking-widest font-univers text-ink-mid'
 
 export default function Sobre() {
+  const { t } = useTranslation('sobre')
+
   return (
     <div className="space-y-6 mt-0">
-      <SectionHeader title="/ sobre" />
+      <SectionHeader title={t('section_title')} />
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pt-2">
         {/* coluna de perfil */}
         <div className="md:col-span-4 space-y-4 font-geom-body">
-          <h3 className={labelClass}>// resumo profissional</h3>
-          <p className="text-sm leading-relaxed text-ink">
-            engenheira civil especialista em transportes, atuando no planejamento
-            e avaliação de políticas públicas.
-            <br />
-            construindo pontes entre a visão analítica com estratégia para
-            desenvolvimento de investimentos no setor de transportes.
-          </p>
+          <h3 className={labelClass}>{t('resumo_label')}</h3>
+          <p className="text-sm leading-relaxed text-ink">{t('bio')}</p>
           <div className="flex flex-col gap-3 pt-2">
             <a
               href="https://github.com/cperotto"
@@ -47,19 +44,19 @@ export default function Sobre() {
         <div className="md:col-span-8 border-l pl-6 space-y-8 border-ink">
           {/* formação acadêmica */}
           <div className="space-y-6">
-            <h3 className={labelClass}>// formação acadêmica</h3>
+            <h3 className={labelClass}>{t('formacao_label')}</h3>
             <div className="space-y-6">
               <div>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
                   <h4 className="text-base font-bold font-univers text-ink">
-                    bacharelado em engenharia civil // universidade de são paulo
+                    {t('bach_degree')}
                   </h4>
                   <span className="text-xs font-mono font-bold whitespace-nowrap text-ink-mid">
                     2016 — 2021
                   </span>
                 </div>
                 <p className="font-mono text-xs mt-1 text-ink-mid uppercase tracking-wider">
-                  ênfase em engenharia de transportes
+                  {t('bach_detail')}
                 </p>
               </div>
               <div>
@@ -69,7 +66,7 @@ export default function Sobre() {
                     className="group flex items-center gap-1 hover:text-accent transition-colors duration-200"
                   >
                     <h4 className="text-base font-bold font-univers text-ink group-hover:text-accent transition-colors duration-200">
-                      mestrado em políticas públicas // insper
+                      {t('master_degree')}
                     </h4>
                     <ArrowUpRightIcon className="text-ink group-hover:text-accent transition-colors duration-200" />
                   </Link>
@@ -78,9 +75,7 @@ export default function Sobre() {
                   </span>
                 </div>
                 <p className="font-mono text-xs mt-1 text-ink-mid uppercase tracking-wider">
-                  os movimentos da acessibilidade: interações entre regulação,
-                  <br />
-                  uso do solo e mobilidade em são paulo entre 2013 e 2022
+                  {t('master_detail')}
                 </p>
               </div>
             </div>
@@ -88,47 +83,45 @@ export default function Sobre() {
 
           {/* trajetória profissional */}
           <div className="space-y-6 mt-8">
-            <h3 className={labelClass}>// trajetória profissional</h3>
+            <h3 className={labelClass}>{t('trajetoria_label')}</h3>
             <div className="space-y-6">
               <div>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
                   <h4 className="text-base font-bold font-univers text-ink">
-                    coordenadora geral de instrumentos de planejamento //
-                    ministério dos transportes
+                    {t('job1_title')}
                   </h4>
                   <span className="text-xs font-mono font-bold whitespace-nowrap text-ink-mid">
-                    jul/2025 - presente
+                    {t('job1_period')}
                   </span>
                 </div>
                 <p className="font-mono text-xs mt-1 text-ink-mid uppercase tracking-wider">
-                  infraestrutura de transporte • políticas públicas
+                  {t('job1_tags')}
                 </p>
               </div>
               <div>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
                   <h4 className="text-base font-bold font-univers text-ink">
-                    consultora (short-term) // banco mundial
+                    {t('job2_title')}
                   </h4>
                   <span className="text-xs font-mono font-bold whitespace-nowrap text-ink-mid">
-                    mai/2025 — jul/2025
+                    {t('job2_period')}
                   </span>
                 </div>
                 <p className="font-mono text-xs mt-1 text-ink-mid uppercase tracking-wider">
-                  transporte público • governança de dados • transição energética
+                  {t('job2_tags')}
                 </p>
               </div>
               <div>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
                   <h4 className="text-base font-bold font-univers text-ink">
-                    lead data scientist // scipopulis
+                    {t('job3_title')}
                   </h4>
                   <span className="text-xs font-mono font-bold whitespace-nowrap text-ink-mid">
-                    dez/2019 — jun/2025
+                    {t('job3_period')}
                   </span>
                 </div>
                 <p className="font-mono text-xs mt-1 text-ink-mid uppercase tracking-wider">
-                  mobilidade urbana • geoprocessamento em tempo real • otimização
-                  operacional
+                  {t('job3_tags')}
                 </p>
               </div>
             </div>
