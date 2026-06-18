@@ -1,28 +1,71 @@
 {
-  "section_title": "/ nutshells — notes, essays and articles",
-  "caption": "scientific communication platforms",
-  "description": "short pieces of technical and theoretical communication about data science, typography, and the geometric relationship of interfaces.",
+  "section_title": "/ publications",
+  "caption": "research, essays and articles",
+  "description": "short pieces of technical communication and institutional reports.",
+  "white_papers_title": "/ white papers",
+  "white_papers_caption": "decarbonization and public transport",
+  "articles_title": "/ articles and essays",
+  "articles_caption": "spatial data analysis and visualization",
+  "publications_count": "{{count}} publications",
+  "white_papers": [
+    {
+      "author": "insper",
+      "title": "guide to electromobility for brazilian cities: public transport",
+      "summary": "practical guide focused on business models, regulatory infrastructure, and guidelines for the energy transition of public transport fleets in brazilian municipalities.",
+      "url": "https://repositorio.insper.edu.br/entities/publication/dc7361f5-65f7-4e42-9d33-f8ed2349c194"
+    },
+    {
+      "author": "itdp / scipopulis",
+      "title": "acelerando a transição: estratégia para eletrificar a frota brasileira de ônibus",
+      "summary": "proposal for regulatory pathways, structuring public-private partnerships, and alternative funding sources to achieve decarbonization goals by 2030.",
+      "url": "https://itdpbrasil.org/acelerando-a-transicao-estrategia-para-eletrificar-a-frota-brasileira-de-onibus-ate-2030/"
+    },
+    {
+      "author": "uitp /scipopulis",
+      "title": "large scale bus electrification: it systems checklist",
+      "summary": "structured checklist of fundamental it and software requirements to support operators and authorities in planning and scaling fleet charging.",
+      "url": "https://www.uitp.org/publications/large-scale-bus-electrification-it-systems-checklist/"
+    },
+    {
+      "author": "uitp /scipopulis",
+      "title": "large-scale bus electrification: new challenges for it systems",
+      "summary": "detailed technical analysis of new data integration barriers, smart energy management, and advanced telemetry in electrified bus depots.",
+      "url": "https://www.uitp.org/publications/large-scale-bus-electrification-new-challenges-for-it-systems/"
+    }
+  ],
   "articles": [
     {
-      "platform": "platform",
+      "platform": "medium",
+      "date": "jul 2026",
+      "title": "an introduction to spatial econometrics for urban data",
+      "summary": "applying spatial autoregressive (sar) and spatial error models (sem) to understand housing dynamics.",
+      "tags": [
+        "spatial econometrics",
+        "data science"
+      ],
+      "url": "#"
+    },
+    {
+      "platform": "towards data science",
       "date": "jun 2026",
-      "title": "complex network modeling with a focus on structured data density",
-      "summary": "a practical guide to graph analysis and efficient ways to visualize connectivity in large volumes of information.",
-      "tags": ["data science", "graphs"]
+      "title": "applied geostatistics: modeling spatial dependence",
+      "summary": "how to use semivariograms and kriging to predict continuous variables in unsampled territories.",
+      "tags": [
+        "geostatistics",
+        "python"
+      ],
+      "url": "#"
     },
     {
-      "platform": "platform",
-      "date": "may 2026",
-      "title": "the role of typography in scientific visualization",
-      "summary": "how typographic families descended from univers improve technical readability precision in analytical charts and dashboards.",
-      "tags": ["typography", "swiss design"]
-    },
-    {
-      "platform": "platform",
+      "platform": "medium",
       "date": "mar 2026",
-      "title": "geometry and negative space: lessons for digital dashboards",
-      "summary": "applying free-space rules and absolute contrasts inherited from the emil ruder school in modern front-end development.",
-      "tags": ["dashboard", "front-end"]
+      "title": "density and accessibility: urban metrics with spatial data science",
+      "summary": "quantitative methods to measure the impact of high-capacity transport proximity on land value.",
+      "tags": [
+        "spatial data science",
+        "urbanism"
+      ],
+      "url": "#"
     }
   ]
 }

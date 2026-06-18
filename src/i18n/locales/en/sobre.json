@@ -4,9 +4,9 @@
   "bio": "civil engineer specializing in transportation, working in the planning and evaluation of public policies. building bridges between analytical vision and strategy for investment development in the transportation sector.",
   "formacao_label": "// education",
   "bach_degree": "bachelor's in civil engineering // university of são paulo",
-  "bach_detail": "emphasis in transportation engineering",
+  "bach_detail": "transportation engineering minor",
   "master_degree": "master's in public policy // insper",
-  "master_detail": "the movements of accessibility: interactions between regulation, land use, and mobility in são paulo between 2013 and 2022",
+  "master_detail": "the movements of accessibility: interactions between regulation,\nland use, and mobility in são paulo between 2013 and 2022",
   "trajetoria_label": "// professional experience",
   "job1_title": "general coordinator of planning instruments // ministry of transportation",
   "job1_period": "jul/2025 - present",
@@ -18,5 +18,6 @@
   "job3_period": "dec/2019 — jun/2025",
   "job3_tags": "urban mobility • real-time geoprocessing • operational optimization",
   "certificacoes_label": "// certifications",
-  "cert_levels": "foundation & preparation levels"
+  "cert_levels": "foundation & preparation levels",
+  "redes_label": "// find me at"
 }

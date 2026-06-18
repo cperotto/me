@@ -1,28 +1,71 @@
 {
-  "section_title": "/ nutshells — notas, ensaios e artigos",
-  "caption": "plataformas de divulgação científica",
-  "description": "peças curtas de divulgação técnica e teórica sobre ciência de dados, tipografia e a relação geométrica das interfaces.",
+  "section_title": "/ publicações",
+  "caption": "",
+  "description": "peças curtas de divulgação técnica e relatórios institucionais.",
+  "white_papers_title": "/ white papers",
+  "white_papers_caption": "descarbonização e transporte público",
+  "articles_title": "/ artigos e ensaios",
+  "articles_caption": "análise e visualização de dados espaciais",
+  "publications_count": "{{count}} publicações",
+  "white_papers": [
+    {
+      "author": "insper",
+      "title": "guide to electromobility for brazilian cities: public transport",
+      "summary": "guia prático focado em modelos de negócios, infraestrutura regulatória e diretrizes para a transição energética das frotas de transporte coletivo urbano em municípios brasileiros.",
+      "url": "https://repositorio.insper.edu.br/entities/publication/dc7361f5-65f7-4e42-9d33-f8ed2349c194"
+    },
+    {
+      "author": "itdp / scipopulis",
+      "title": "acelerando a transição: estratégia para eletrificar a frota brasileira de ônibus",
+      "summary": "proposta de caminhos regulatórios, estruturação de parcerias público-privadas e fontes alternativas de financiamento para atingir as metas de descarbonização até 2030.",
+      "url": "https://itdpbrasil.org/acelerando-a-transicao-estrategia-para-eletrificar-a-frota-brasileira-de-onibus-ate-2030/"
+    },
+    {
+      "author": "uitp / scipopulis",
+      "title": "large scale bus electrification: it systems checklist",
+      "summary": "checklist estruturado de requisitos fundamentais de ti e software para dar suporte a operadoras e autoridades no planejamento e escala do carregamento de frotas.",
+      "url": "https://www.uitp.org/publications/large-scale-bus-electrification-it-systems-checklist/"
+    },
+    {
+      "author": "uitp / scipopulis",
+      "title": "large-scale bus electrification: new challenges for it systems",
+      "summary": "análise técnica detalhada das novas barreiras de integração de dados, gerenciamento inteligente de energia e telemetria avançada em garagens de ônibus eletrificadas.",
+      "url": "https://www.uitp.org/publications/large-scale-bus-electrification-new-challenges-for-it-systems/"
+    }
+  ],
   "articles": [
     {
-      "platform": "plataforma",
+      "platform": "medium",
+      "date": "jul 2026",
+      "title": "uma introdução à econometria espacial para dados urbanos",
+      "summary": "aplicação de modelos autorregressivos espaciais (sar) e modelos de erro espacial (sem) para entender dinâmicas de habitação.",
+      "tags": [
+        "econometria espacial",
+        "ciência de dados"
+      ],
+      "url": "#"
+    },
+    {
+      "platform": "towards data science",
       "date": "jun 2026",
-      "title": "modelagem de redes complexas com foco em densidade de dados estruturados",
-      "summary": "um guia prático sobre análise de grafos e formas eficientes de visualizar conectividade em grandes volumes de informação.",
-      "tags": ["data science", "grafos"]
+      "title": "geoestatística aplicada: modelagem de dependência espacial",
+      "summary": "como utilizar semivariogramas e krigagem para predição de variáveis contínuas em territórios não amostrados.",
+      "tags": [
+        "geoestatística",
+        "python"
+      ],
+      "url": "#"
     },
     {
-      "platform": "plataforma",
-      "date": "maio 2026",
-      "title": "o papel da tipografia na visualização científica",
-      "summary": "como famílias tipográficas herdeiras da univers melhoram a precisão na legibilidade técnica de gráficos e dashboards analíticos.",
-      "tags": ["tipografia", "design suíço"]
-    },
-    {
-      "platform": "plataforma",
+      "platform": "medium",
       "date": "mar 2026",
-      "title": "geometria e espaço negativo: lições para dashboards digitais",
-      "summary": "aplicando regras de espaço livre e contrastes absolutos herdados da escola de emil ruder no desenvolvimento front-end moderno.",
-      "tags": ["dashboard", "front-end"]
+      "title": "densidade e acessibilidade: métricas urbanas com spatial data science",
+      "summary": "métodos quantitativos para mensurar o impacto da proximidade ao transporte de alta capacidade na valorização do solo.",
+      "tags": [
+        "spatial data science",
+        "urbanismo"
+      ],
+      "url": "#"
     }
   ]
 }

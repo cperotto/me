@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import Sobre from './pages/Sobre'
 import Academico from './pages/Academico'
-import Nutshells from './pages/Nutshells'
+import Publicacoes from './pages/Publicacoes'
 
 export default function App() {
   return (
@@ -10,7 +10,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Sobre />} />
         <Route path="/academico" element={<Academico />} />
-        <Route path="/nutshells" element={<Nutshells />} />
+        <Route path="/publicacoes" element={<Publicacoes />} />
       </Routes>
     </Layout>
   )

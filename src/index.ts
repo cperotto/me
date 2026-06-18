@@ -17,10 +17,8 @@ export type { GridBackgroundProps } from './components/GridBackground'
 export { default as SectionHeader } from './components/SectionHeader'
 export type { SectionHeaderProps } from './components/SectionHeader'
 
-export { default as NutshellCard } from './components/NutshellCard'
-export type { NutshellCardProps } from './components/NutshellCard'
+
 
 export { GithubIcon, LinkedinIcon, ArrowUpRightIcon } from './components/icons'
 export type { IconProps } from './components/icons'
 
-export type { Nutshell } from './data/nutshells'

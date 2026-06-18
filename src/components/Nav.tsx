@@ -10,7 +10,7 @@ export default function Nav() {
   const items = [
     { to: '/', label: t('nav.sobre'), end: true },
     { to: '/academico', label: t('nav.academico') },
-    { to: '/nutshells', label: t('nav.nutshells') },
+    { to: '/publicacoes', label: t('nav.publicacoes') },
   ]
 
   return (

@@ -6,7 +6,7 @@
   "bach_degree": "bacharelado em engenharia civil // universidade de são paulo",
   "bach_detail": "ênfase em engenharia de transportes",
   "master_degree": "mestrado em políticas públicas // insper",
-  "master_detail": "os movimentos da acessibilidade: interações entre regulação, uso do solo e mobilidade em são paulo entre 2013 e 2022",
+  "master_detail": "os movimentos da acessibilidade: interações entre regulação,\nuso do solo e mobilidade em são paulo entre 2013 e 2022",
   "trajetoria_label": "// trajetória profissional",
   "job1_title": "coordenadora geral de instrumentos de planejamento // ministério dos transportes",
   "job1_period": "jul/2025 - presente",
@@ -18,5 +18,6 @@
   "job3_period": "dez/2019 — jun/2025",
   "job3_tags": "mobilidade urbana • geoprocessamento em tempo real • otimização operacional",
   "certificacoes_label": "// certificações",
-  "cert_levels": "níveis foundation & preparation"
+  "cert_levels": "níveis foundation & preparation",
+  "redes_label": "// redes sociais"
 }
