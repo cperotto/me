@@ -8,23 +8,23 @@ interface WhitePaper {
   url: string
 }
 
-interface Article {
+/* interface Article {
   platform: string
   date: string
   title: string
   summary: string
   tags: string[]
   url: string
-}
+} */
 
 export default function Publicacoes() {
   const { t } = useTranslation('nutshells')
 
   const whitePapers = t('white_papers', { returnObjects: true }) as WhitePaper[]
-  const articles = t('articles', { returnObjects: true }) as Article[]
+  // const articles = t('articles', { returnObjects: true }) as Article[]
 
   return (
-    <div className="space-y-16 mt-0">
+    <div className="space-y-10 mt-0">
       {/* White Papers Section */}
       <div className="space-y-8">
         <SectionHeader
@@ -41,7 +41,7 @@ export default function Publicacoes() {
               rel="noreferrer"
               className="group flex flex-col space-y-3 p-4 -m-4 rounded-sm transition-all duration-300 hover:-translate-y-1 hover:bg-ink/5"
             >
-              <span className="text-[10px] font-mono font-bold tracking-widest text-accent">
+              <span className="text-[10px] font-mono font-bold tracking-widest text-warm-text">
                 {paper.author}
               </span>
               <h3 className="text-base font-bold font-univers leading-snug text-ink group-hover:text-accent transition-colors duration-200">
@@ -56,7 +56,7 @@ export default function Publicacoes() {
       </div>
 
       {/* Articles Section */}
-      <div className="space-y-8">
+      {/* <div className="space-y-8">
         <SectionHeader
           title={t('articles_title')}
           caption={t('articles_caption')}
@@ -98,7 +98,7 @@ export default function Publicacoes() {
             </a>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }

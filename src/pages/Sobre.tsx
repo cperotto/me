@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import SectionHeader from '../components/SectionHeader'
-import { GithubIcon, LinkedinIcon, ArrowUpRightIcon } from '../components/icons'
+import { LinkedinIcon } from '../components/icons'
+// import { GithubIcon, ArrowUpRightIcon } from '../components/icons'
 
 const labelClass =
   'text-base font-bold uppercase tracking-widest font-univers text-ink-mid'
@@ -36,7 +37,7 @@ export default function Sobre() {
           <div className="space-y-2">
             <h3 className={labelClass}>{t('redes_label')}</h3>
             <div className="flex flex-col gap-3">
-              <a
+              {/* <a
                 href="https://github.com/cperotto"
                 target="_blank"
                 rel="noreferrer"
@@ -44,7 +45,7 @@ export default function Sobre() {
               >
                 <GithubIcon />
                 github
-              </a>
+              </a> */}
               <a
                 href="https://www.linkedin.com/in/cperotto/"
                 target="_blank"
@@ -69,7 +70,7 @@ export default function Sobre() {
                   <h4 className="text-base font-bold font-univers text-ink">
                     {t('bach_degree')}
                   </h4>
-                  <span className="text-sm font-geom-body whitespace-nowrap text-ink-mid">
+                  <span className="text-xs font-geom-body whitespace-nowrap text-ink-mid">
                     2016 — 2021
                   </span>
                 </div>
@@ -79,16 +80,16 @@ export default function Sobre() {
               </div>
               <div>
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
-                  <Link
+                  {/* <Link
                     to="/academico"
                     className="group flex items-center gap-1 hover:text-accent transition-colors duration-200"
-                  >
-                    <h4 className="text-base font-bold font-univers text-ink group-hover:text-accent transition-colors duration-200">
+                  > */}
+                    <h4 className="text-base font-bold font-univers text-ink">
                       {t('master_degree')}
                     </h4>
-                    <ArrowUpRightIcon className="text-ink group-hover:text-accent transition-colors duration-200" />
-                  </Link>
-                  <span className="text-sm font-geom-body whitespace-nowrap text-ink-mid">
+                    {/* <ArrowUpRightIcon className="text-ink group-hover:text-accent transition-colors duration-200" />
+                  </Link> */}
+                  <span className="text-xs font-geom-body whitespace-nowrap text-ink-mid">
                     2023 — 2025
                   </span>
                 </div>
@@ -108,7 +109,7 @@ export default function Sobre() {
                   <h4 className="text-base font-bold font-univers text-ink">
                     {t('job1_title')}
                   </h4>
-                  <span className="text-sm font-geom-body whitespace-nowrap text-ink-mid">
+                  <span className="text-xs font-geom-body whitespace-nowrap text-ink-mid">
                     {t('job1_period')}
                   </span>
                 </div>
@@ -121,7 +122,7 @@ export default function Sobre() {
                   <h4 className="text-base font-bold font-univers text-ink">
                     {t('job2_title')}
                   </h4>
-                  <span className="text-sm font-geom-body whitespace-nowrap text-ink-mid">
+                  <span className="text-xs font-geom-body whitespace-nowrap text-ink-mid">
                     {t('job2_period')}
                   </span>
                 </div>
@@ -134,7 +135,7 @@ export default function Sobre() {
                   <h4 className="text-base font-bold font-univers text-ink">
                     {t('job3_title')}
                   </h4>
-                  <span className="text-sm font-geom-body whitespace-nowrap text-ink-mid">
+                  <span className="text-xs font-geom-body whitespace-nowrap text-ink-mid">
                     {t('job3_period')}
                   </span>
                 </div>
