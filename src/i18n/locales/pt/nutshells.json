@@ -2,34 +2,34 @@
   "section_title": "/ publicações",
   "caption": "",
   "description": "peças curtas de divulgação técnica e relatórios institucionais.",
-  "white_papers_title": "/ white papers",
-  "white_papers_caption": "descarbonização e transporte público",
-  "articles_title": "/ artigos e ensaios",
-  "articles_caption": "análise e visualização de dados espaciais",
+  "white_papers_title": "/ transporte público e transição energética",
+  "white_papers_caption": "white papers",
+  "articles_title": "/ dados espaciais e estatística",
+  "articles_caption": "artigos e ensaios",
   "publications_count": "{{count}} publicações",
   "white_papers": [
     {
       "author": "insper",
-      "title": "guide to electromobility for brazilian cities: public transport",
-      "summary": "guia prático focado em modelos de negócios, infraestrutura regulatória e diretrizes para a transição energética das frotas de transporte coletivo urbano em municípios brasileiros.",
+      "title": "guia de eletromobilidade para cidades brasileiras: transporte público",
+      "summary": "apresentação de modelos de negócios, diretrizes regulatórias, aspectos operacionais para viabilização da transição energética em frotas de transporte coletivo urbano no brasil.",
       "url": "https://repositorio.insper.edu.br/entities/publication/dc7361f5-65f7-4e42-9d33-f8ed2349c194"
     },
     {
-      "author": "itdp / scipopulis",
+      "author": "itdp / minist. das cidades / scipopulis",
       "title": "acelerando a transição: estratégia para eletrificar a frota brasileira de ônibus",
-      "summary": "proposta de caminhos regulatórios, estruturação de parcerias público-privadas e fontes alternativas de financiamento para atingir as metas de descarbonização até 2030.",
+      "summary": "qualificação técnica e estruturação de estratégia para substituição de frotas de ônibus no brasil, visando descarbonização do transporte público urbano.",
       "url": "https://itdpbrasil.org/acelerando-a-transicao-estrategia-para-eletrificar-a-frota-brasileira-de-onibus-ate-2030/"
     },
     {
       "author": "uitp / scipopulis",
       "title": "large scale bus electrification: it systems checklist",
-      "summary": "checklist estruturado de requisitos fundamentais de ti e software para dar suporte a operadoras e autoridades no planejamento e escala do carregamento de frotas.",
+      "summary": "requisitos de ti para desenvolvimento de software de apoio a operadoras e autoridades locais no planejamento operacional de frotas de ônibus.",
       "url": "https://www.uitp.org/publications/large-scale-bus-electrification-it-systems-checklist/"
     },
     {
       "author": "uitp / scipopulis",
       "title": "large-scale bus electrification: new challenges for it systems",
-      "summary": "análise técnica detalhada das novas barreiras de integração de dados, gerenciamento inteligente de energia e telemetria avançada em garagens de ônibus eletrificadas.",
+      "summary": "análise técnica de novas barreiras relativas a integração de dados, gerenciamento inteligente de energia e telemetria em garagens e frota de ônibus eletrificadas.",
       "url": "https://www.uitp.org/publications/large-scale-bus-electrification-new-challenges-for-it-systems/"
     }
   ],

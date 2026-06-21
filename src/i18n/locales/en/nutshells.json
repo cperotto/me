@@ -1,35 +1,35 @@
 {
   "section_title": "/ publications",
-  "caption": "research, essays and articles",
+  "caption": "",
   "description": "short pieces of technical communication and institutional reports.",
-  "white_papers_title": "/ white papers",
-  "white_papers_caption": "decarbonization and public transport",
-  "articles_title": "/ articles and essays",
-  "articles_caption": "spatial data analysis and visualization",
+  "white_papers_title": "/ public transport and energy transition",
+  "white_papers_caption": "white papers",
+  "articles_title": "/ spatial data and statistics",
+  "articles_caption": "articles and essays",
   "publications_count": "{{count}} publications",
   "white_papers": [
     {
       "author": "insper",
       "title": "guide to electromobility for brazilian cities: public transport",
-      "summary": "practical guide focused on business models, regulatory infrastructure, and guidelines for the energy transition of public transport fleets in brazilian municipalities.",
+      "summary": "presentation of business models, regulatory guidelines, and operational aspects to enable the energy transition in urban public transport fleets in brazil.",
       "url": "https://repositorio.insper.edu.br/entities/publication/dc7361f5-65f7-4e42-9d33-f8ed2349c194"
     },
     {
-      "author": "itdp / scipopulis",
+      "author": "itdp / ministry of cities / scipopulis",
       "title": "acelerando a transição: estratégia para eletrificar a frota brasileira de ônibus",
-      "summary": "proposal for regulatory pathways, structuring public-private partnerships, and alternative funding sources to achieve decarbonization goals by 2030.",
+      "summary": "technical qualification and structuring of a strategy to replace bus fleets in brazil, aiming at the decarbonization of urban public transport.",
       "url": "https://itdpbrasil.org/acelerando-a-transicao-estrategia-para-eletrificar-a-frota-brasileira-de-onibus-ate-2030/"
     },
     {
       "author": "uitp / scipopulis",
       "title": "large scale bus electrification: it systems checklist",
-      "summary": "structured checklist of fundamental it and software requirements to support operators and authorities in planning and scaling fleet charging.",
+      "summary": "it requirements for developing software to support operators and local authorities in the operational planning of bus fleets.",
       "url": "https://www.uitp.org/publications/large-scale-bus-electrification-it-systems-checklist/"
     },
     {
       "author": "uitp / scipopulis",
       "title": "large-scale bus electrification: new challenges for it systems",
-      "summary": "detailed technical analysis of new data integration barriers, smart energy management, and advanced telemetry in electrified bus depots.",
+      "summary": "technical analysis of new barriers related to data integration, smart energy management, and telemetry in electrified bus depots and fleets.",
       "url": "https://www.uitp.org/publications/large-scale-bus-electrification-new-challenges-for-it-systems/"
     }
   ],
